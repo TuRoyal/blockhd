@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
 type Props = {};
@@ -15,10 +16,16 @@ const Header = (props: Props) => {
 
   const { data: session, status } = useSession();
   const [userInfo, setUserInfo] = useState<any>()
+  const router = useRouter()
 
   const getPertra =async ()=>{
-    let data =  await (window as any).aptos.account();
-    return data
+    try {
+      let data =  await (window as any).aptos.account();
+      return data
+    } catch (error) {
+      router.push("https://chromewebstore.google.com/detail/petra-aptos-wallet/ejjladinnckdgjemekebdpeokbikhfci")
+    }
+   
   }
 
   const getUserInfo = async ()=>{
