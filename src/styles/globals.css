@@ -17,11 +17,28 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
+}
+
+.shadow1{
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.10);
+}
+.shadow2{
+  box-shadow: 0px 0px 16px 0px rgba(19, 92, 84, 0.15);
+}
+
+.bgGradient {
+  background-image: url("../../public/Rectangle.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bggr{
+  background: rgba(255, 255, 255, 0.50);
 }
